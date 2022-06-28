@@ -18,15 +18,18 @@ namespace Url_Detector
 
         public async Task StartAsync()
         {
-
             while (true)
             {
                 Console.Write("Enter a sentence: ");
                 var input = Console.ReadLine();
 
-                input = RemoveUrlViaProtocol(input);
-                input = RemoveUrlViaTLD(input);
+                var replaced = RemoveUrlViaProtocol(input);
+                replaced = RemoveUrlViaTLD(input);
                 Console.WriteLine($"Result: {input}");
+                if (replaced == input)
+                {
+                    Console.WriteLine("No URLs detected.");
+                }
 
             }
         }
