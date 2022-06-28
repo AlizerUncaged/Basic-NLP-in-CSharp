@@ -24,7 +24,7 @@ namespace Url_Detector
                 var input = Console.ReadLine();
 
                 var replaced = RemoveUrlViaProtocol(input);
-                replaced = RemoveUrlViaTLD(input);
+                replaced = RemoveUrlViaTLD(replaced);
                 if (replaced == input)
                 {
                     Console.WriteLine("Does not contain URL.");
@@ -33,7 +33,7 @@ namespace Url_Detector
                 {
                     Console.WriteLine("Contains URL.");
                 }
-                Console.WriteLine($"Result: {input}");
+                Console.WriteLine($"Result: {replaced}");
 
             }
         }
