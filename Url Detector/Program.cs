@@ -25,11 +25,15 @@ namespace Url_Detector
 
                 var replaced = RemoveUrlViaProtocol(input);
                 replaced = RemoveUrlViaTLD(input);
-                Console.WriteLine($"Result: {input}");
                 if (replaced == input)
                 {
-                    Console.WriteLine("No URLs detected.");
+                    Console.WriteLine("Does not contain URL.");
                 }
+                else
+                {
+                    Console.WriteLine("Contains URL.");
+                }
+                Console.WriteLine($"Result: {input}");
 
             }
         }
